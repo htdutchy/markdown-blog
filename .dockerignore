@@ -1,0 +1,5 @@
+docker
+!docker/requirements.txt
+!docker/virtualhost.conf
+.env
+docker-compose.yml

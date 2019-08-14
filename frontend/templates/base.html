@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1565511279373">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <a class="sidebar-logo" href="/"><span>Your logo here</span></a>
+        <div class="sidebar-list">
+            {% block sidebar %}
+                Templating error
+            {% endblock %}
+        </div>
+    </div>
+    <div class="main">
+        <div class="heading">{% block header_title %}<h1>{{ header_title }}</h1>{% endblock %}</div>
+        <div class="content">
+            {% block content %}
+                Templating error
+            {% endblock %}
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        &copy; {% now "Y" %}
+    </div>
+    <div class="footer">
+        Source Code
+{#        TODO: Link to gitlab#}
+    </div>
+</div>
+<div class="background">
+    <img src="{% static 'default.jpg' %}" alt="Background Image"/>
+</div>
+</body>
+<script src="{% static 'dist/main.js' %}?cb=1565511279373"></script>
+</html>

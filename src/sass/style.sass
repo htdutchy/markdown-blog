@@ -1,0 +1,82 @@
+@import variables
+@import mixins
+
+.container
+    font-family: "Open Sans", sans-serif
+    display: grid
+    grid-template-columns: 350px auto
+    grid-template-rows: auto 50px
+    grid-column-gap: 15px
+    grid-row-gap: 10px
+    justify-items: stretch
+    align-items: stretch
+    min-height: 98vh
+    max-width: 1920px
+
+
+.sidebar
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: 50px auto
+    grid-row-gap: 10px
+
+    .sidebar-logo
+        font-family: "Open Sans", sans-serif
+        font-weight: 600
+        font-size: 30px
+        line-height: 50px
+        text-align: center
+        background-color: $color-background
+        border-radius: 10px
+        color: unset
+        text-decoration: unset
+
+
+.main
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: 50px auto
+    grid-row-gap: 10px
+
+    .heading
+        line-height: 50px
+        padding-left: 10px
+
+        h1
+            font-family: "Open Sans", sans-serif
+            font-size: 30px
+            margin: 0
+
+        .heading-home
+            font-family: "Open Sans", sans-serif
+            font-weight: 600
+
+
+.sidebar-footer
+    text-align: center
+    line-height: 50px
+    background-color: $color-background
+    border-radius: 10px
+
+
+.footer
+    line-height: 50px
+    background-color: #eee
+    border-radius: 10px
+    padding-left: 10px
+
+
+.background
+    position: fixed
+    top: 0
+    left: 0
+    z-index: -42
+    height: 100vh
+    width: 365px
+    overflow: hidden
+    justify-content: center
+    display: flex
+
+    img
+        width: auto
+        height: 100%

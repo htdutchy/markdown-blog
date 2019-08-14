@@ -1,0 +1,36 @@
+{
+  "name": "markdown_blog",
+  "version": "1.0.0",
+  "description": "Markdown based blog",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com:htdutchy/markdown_blog.git"
+  },
+  "keywords": [
+    "gulp",
+    "boilerplate",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "@htdutchy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com:htdutchy/markdown_blog/issues"
+  },
+  "homepage": "https://gitlab.com:htdutchy/markdown_blog#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "child_process": "^1.0.2",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "replace-in-file": "^4.1.1"
+  }
+}

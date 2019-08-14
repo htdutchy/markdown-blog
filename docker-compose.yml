@@ -1,0 +1,13 @@
+version: '2'
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: ./docker/app.docker
+        ports:
+            - "80:80"
+        volumes:
+            - ./:/opt/app:delegated
+            - ./docker/www-log:/var/log/nginx
+            - ./docker/virtualhost.conf:/etc/nginx/conf.d/default.conf
+        command: bash -c "service nginx restart && python3 manage.py migrate && python3 manage.py collectstatic --no-input && gunicorn markdown_blog.wsgi --name markdown_blog --workers 3 --user=root --group=root --bind=127.0.0.1:8080"

@@ -1,0 +1,27 @@
+@import variables
+@import mixins
+
+@media only screen and (max-device-width: 768px), (max-width: 768px)
+    .background
+        background-image: unset
+
+    .container
+        grid-template-columns: auto
+        grid-template-rows: auto auto 50px 50px
+        min-height: unset
+
+    .sidebar
+        grid-template-columns: auto
+        grid-template-rows: 50px auto
+
+    .sidebar-items
+        grid-template-columns: auto
+        grid-auto-rows: 100px
+
+    .main
+        grid-template-columns: auto
+        grid-template-rows: 50px auto
+
+    .category-list
+        grid-template-columns: repeat(2, auto)
+        grid-auto-rows: 400px

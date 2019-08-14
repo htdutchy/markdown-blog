@@ -1,0 +1,13 @@
+beautifulsoup4==4.8.0
+Django==2.2.4
+django-environ==0.4.5
+gunicorn==19.9.0
+Markdown==3.1.1
+markdown-checklist==0.4.1
+markdown-djangostaticimage==0.1
+Pillow==6.1.0
+pip==19.2.2
+pytz==2019.2
+setuptools==41.0.1
+soupsieve==1.9.2
+sqlparse==0.3.0

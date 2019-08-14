@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block sidebar %}
+    <h2>Recent articles:</h2>
+    <div class="article-list">
+        {% for article in articles %}
+            <div class="article" onclick="location.href='{{ article.url }}';">
+                <h3>{{ article.title }}</h3>
+                <span class="meta">
+                    By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
+                </span>
+                <span class="visited" data-url="{{ article.url }}"></span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block content %}
+    <h2>Welcome</h2><br/>
+    Some words here...
+    <hr/>
+    <h2>Categories:</h2><br/>
+    <div class="category-list">
+        {% for category in categories %}
+            <div class="category-list-block">
+                <img src="{% static category.featureImage.url_small %}" alt="{{ category.featureImage.altText }}">
+                <h3>{{ category.title }}</h3>
+                <span class="visited" data-url="{{ category.url }}"></span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
