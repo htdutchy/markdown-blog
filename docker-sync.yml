@@ -1,0 +1,6 @@
+version: "2"
+syncs:
+    markdown-blog_app-files:
+        notify_terminal: true
+        src: './'
+        sync_excludes: ['.git', '.idea', 'node_modules', 'docker', 'venv', '.docker-sync']

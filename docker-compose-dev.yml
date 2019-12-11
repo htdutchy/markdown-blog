@@ -1,0 +1,9 @@
+version: "2"
+services:
+    app:
+        volumes:
+            - markdown-blog_app-files:/opt/app:nocopy
+
+volumes:
+    markdown-blog_app-files:
+        external: true

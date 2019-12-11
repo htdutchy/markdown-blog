@@ -10,7 +10,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const replace = require('replace-in-file');
-const browserSync = require('browser-sync').create()
+const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 
 
@@ -28,7 +28,7 @@ function sassTask() {
         .pipe(concat('main.css'))
         .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('bhtml/static/dist')
+        .pipe(dest('frontend/static/dist')
         ); // put final CSS in dist folder
 }
 
@@ -39,7 +39,7 @@ function jsTask() {
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('bhtml/static/dist')
+        .pipe(dest('frontend/static/dist')
         );
 }
 
@@ -48,7 +48,7 @@ function cacheBustTask() {
     var cbString = new Date().getTime();
     console.log('New cache bust string: ' + cbString);
     replace.sync({
-        files: 'bhtml/templates/base.html',
+        files: 'frontend/templates/base.html',
         from: /cb=\d+/g,
         to: 'cb=' + cbString,
     });

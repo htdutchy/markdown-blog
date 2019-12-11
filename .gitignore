@@ -238,3 +238,4 @@ pip-selfcheck.json
 
 web/static
 node_modules
+.docker-sync
