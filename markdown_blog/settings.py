@@ -151,5 +151,6 @@ MARKDOWN_EXTENSIONS = [
     'sane_lists',
     'nl2br',
     'markdown_checklist.extension',
+    'toc',
     DjangoStaticImageExtension(),
     ]

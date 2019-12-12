@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 class Markdown:
     def __init__(self, filepath):
-        text = codecs.open(filepath, mode="r", encoding="utf-8").read()
+        text = codecs.open(filepath, mode="r").read()
         md = markdown.Markdown(extensions=settings.MARKDOWN_EXTENSIONS)
         self.html = md.convert(text)
         self.soup = BeautifulSoup(self.html, 'html.parser')
