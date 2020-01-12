@@ -1,22 +1,24 @@
 import logging
+from slugify import slugify
 from ..models import TagCache, ArticleCache
 
 logger = logging.getLogger('blog.caching.tag')
 
 
 def magic_tag(title):
-    logger.debug('Magic tag request: ' + title)
+    title_slug = slugify(title)
+    logger.debug('Magic tag request: ' + title_slug)
     try:
-        tag = TagCache.objects.get(title__iexact=title)
+        tag = TagCache.objects.get(slug__iexact=title_slug)
         return tag
     except TagCache.DoesNotExist:
         pass
-    logger.info('Adding tag:' + title)
-    tag = TagCache(title=title)
+    logger.info('Adding tag:' + title_slug)
+    tag = TagCache(title=title, slug=title_slug)
     try:
         tag.save()
     except Exception as e:
-        logger.error('Failed to save tag: ' + title)
+        logger.error('Failed to save tag: ' + title_slug)
         logger.error('Original message:' + str(e))
     return tag
 
