@@ -65,3 +65,7 @@ Upload the markdown file:
     - [x] checked
 
 Upload the feature_image (`upload/example_category/some_image.jpg`)
+
+### Credits
+
+frontend default.jpg: [shopify burst]('https://burst.shopify.com/photos/camping-kettle-and-coffee-cup?c=nature')
