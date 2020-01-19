@@ -13,6 +13,7 @@ class ImageCache(models.Model):
     cachedLarge = models.FilePathField(path=settings.STATIC_FOLDER, recursive=True)
     fileHash = models.CharField(max_length=160)
     lastCached = models.DateTimeField()
+    exifData = models.TextField(blank=True, null=True)
 
     GENERIC_TYPE = 'generic'
     CATEGORY_TYPE = 'category'
@@ -83,6 +84,7 @@ class ArticleCache(models.Model):
     category = models.ForeignKey(CategoryCache, on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(TagCache)
     featureImage = models.ForeignKey('ImageCache', on_delete=models.DO_NOTHING, blank=True, null=True)
+    extraData = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.title
