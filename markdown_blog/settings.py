@@ -140,7 +140,7 @@ STATIC_ROOT = path.join(BASE_DIR, env('STATIC_FOLDER', default='web/static/', ca
 STATIC_URL = env('STATIC_URL', default='/static/', cast=str)
 STATIC_FOLDER = path.join(BASE_DIR, env('STATIC_FOLDER', default='web/static/', cast=str))
 STATIC_IMAGE_CACHE_FOLDER = path.join(BASE_DIR, env('STATIC_IMAGE_CACHE_FOLDER', default='web/static/img_cache', cast=str))
-STATIC_IMAGE_CACHE_URL = env('STATIC_IMAGE_CACHE_URL', default='/static/img_cache', cast=str)
+STATIC_IMAGE_CACHE_URL = env('STATIC_IMAGE_CACHE_URL', default='/img_cache', cast=str)
 UPLOAD_FOLDER = path.join(BASE_DIR, env('UPLOAD_FOLDER', default='upload/', cast=str))
 
 MARKDOWN_EXTENSIONS = [

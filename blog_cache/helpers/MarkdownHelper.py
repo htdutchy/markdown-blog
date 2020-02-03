@@ -43,7 +43,6 @@ class Markdown:
 
         self.isDraft = False
         try:
-            if str(meta['draft'][0]):
-                self.isDraft = True
+            self.isDraft = str(meta['draft'][0]).lower() in ("yes", "true", "t", "1")
         except KeyError:
             pass

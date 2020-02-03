@@ -23,7 +23,7 @@
     <div class="category-list">
         {% for category in categories %}
             <div class="category-list-block">
-                <img src="{% static category.featureImage.url_small %}" alt="{{ category.featureImage.altText }}">
+                <img src="{% static category.featureImage.url_medium %}" alt="{{ category.featureImage.altText }}">
                 <h3>{{ category.title }}</h3>
                 <span class="visited" data-url="{{ category.url }}"></span>
             </div>

@@ -240,3 +240,4 @@ web/static
 node_modules
 .docker-sync
 upload
+blog_cache/static
