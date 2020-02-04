@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1580760600289">
+    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1580857838917">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
 </head>
 <body>
@@ -32,11 +32,14 @@
     <div class="footer">
         Source Code
 {#        TODO: Link to gitlab#}
+        <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+            <input type="checkbox" id="checkbox_theme">
+        </label>
     </div>
 </div>
 <div class="background">
     <img src="{% static 'default.jpg' %}" alt="Background Image"/>
 </div>
 </body>
-<script src="{% static 'dist/main.js' %}?cb=1580760600289"></script>
+<script src="{% static 'dist/main.js' %}?cb=1580857838917"></script>
 </html>
