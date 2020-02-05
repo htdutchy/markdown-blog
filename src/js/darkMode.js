@@ -12,7 +12,7 @@ function initDarkMode(){
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
 
-    var toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
+    var toggleSwitch = document.querySelector('#darkmode-switch-label input[type="checkbox"]');
     if(theme === "dark") {
         toggleSwitch.checked = true;
     }
