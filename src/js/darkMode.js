@@ -25,6 +25,6 @@ function initDarkMode(){
             document.documentElement.setAttribute("data-theme", "light");
             localStorage.setItem("theme", "light");
         }
-    }, false)
+    })
 }
 initDarkMode();

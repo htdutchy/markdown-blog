@@ -1,17 +1,15 @@
 @import variables
 @import mixins
 
-// light theme (backslash required because sass doesn't like mixing techniques)
+// Solarized light (default theme)
 \:root
-    --sol-bd:      #{$base3}  // Solarized background default
-    --sol-bh:      #{$base2}  // Solarized background highlight
-    --sol-sc:      #{$base00}  // Solarized secondary content
-    --sol-pc:      #{$base01} // Solarized primary content
-    --sol-ec:      #{$base02} // Solarized emphasized content
-//dark theme
+    --sol-background: #{$base3}
+    --sol-highlight:  #{$base2}
+    --sol-secondary:  #{$base00}
+    --sol-primary:    #{$base01}
+// Solarized dark
 [data-theme="dark"]
-    --sol-bd:      #{$base03} // Solarized background default
-    --sol-bh:      #{$base02} // Solarized background highlight
-    --sol-sc:      #{$base0} // Solarized secondary content
-    --sol-pc:      #{$base1}  // Solarized primary content
-    --sol-ec:      #{$base2}  // Solarized emphasized content
+    --sol-background: #{$base03}
+    --sol-highlight:  #{$base02}
+    --sol-secondary:  #{$base0}
+    --sol-primary:    #{$base1}

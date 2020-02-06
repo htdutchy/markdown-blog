@@ -18,15 +18,15 @@
         .article
             display: block
             padding: 10px
-            background-color: $color-background
+            background-color: var(--sol-highlight)
             border-radius: 10px
             position: relative
 
             .visited:after
                 @include font-awesome()
                 position: absolute
-                top: 1px
-                right: 1px
+                top: 2px
+                right: 2px
                 content: "\f111"
                 z-index: 1
                 font-size: 17px

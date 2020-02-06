@@ -1,7 +1,11 @@
 @import ../variables
 @import ../mixins
 
-.darkmode-switch
+p.darkmode-switch
+    padding-top: 8px
+    position: absolute
+
+label.darkmode-switch
     position: relative
     display: inline-block
     width: 90px
@@ -63,5 +67,4 @@
 
 
     input:checked + .darkmode-slider:after
-        content: 'Darkmode'
         color: $base1
