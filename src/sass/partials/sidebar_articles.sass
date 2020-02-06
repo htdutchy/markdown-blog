@@ -2,34 +2,41 @@
 @import ../mixins
 
 .sidebar
-    .article-list
-        display: grid
-        grid-template-columns: auto
-        grid-auto-rows: 100px
-        grid-column-gap: 10px
-        grid-row-gap: 10px
-        justify-items: stretch
-        align-items: stretch
-        position: relative
-        padding: 0
-        margin: 0
+    .sidebar-article-block
+        border-radius: 10px
+        background-color: var(--sol-background-trans)
 
-
-        .article
-            display: block
+        h2
             padding: 10px
-            background-color: var(--sol-highlight)
-            border-radius: 10px
+
+        .article-list
+            display: grid
+            grid-template-columns: auto
+            grid-auto-rows: 100px
+            grid-column-gap: 10px
+            grid-row-gap: 10px
+            justify-items: stretch
+            align-items: stretch
             position: relative
+            padding: 0
+            margin: 0
 
-            .visited:after
-                @include font-awesome()
-                position: absolute
-                top: 2px
-                right: 2px
-                content: "\f111"
-                z-index: 1
-                font-size: 17px
 
-            .visited[data-visited]:after
-                content: "\f058"
+            .article
+                display: block
+                padding: 10px
+                background-color: var(--sol-highlight-trans)
+                border-radius: 10px
+                position: relative
+
+                .visited:after
+                    @include font-awesome()
+                    position: absolute
+                    top: 2px
+                    right: 2px
+                    content: "\f111"
+                    z-index: 1
+                    font-size: 17px
+
+                .visited[data-visited]:after
+                    content: "\f058"

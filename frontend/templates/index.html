@@ -2,17 +2,19 @@
 {% load static %}
 
 {% block sidebar %}
-    <h2>Recent articles:</h2>
-    <div class="article-list">
-        {% for article in articles %}
-            <div class="article" onclick="location.href='{{ article.url }}';">
-                <h3>{{ article.title }}</h3>
-                <span class="meta">
-                    By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
-                </span>
-                <span class="visited" data-url="{{ article.url }}"></span>
-            </div>
-        {% endfor %}
+    <div class="sidebar-article-block">
+        <h2>Recent articles:</h2>
+        <div class="article-list">
+            {% for article in articles %}
+                <div class="article" onclick="location.href='{{ article.url }}';">
+                    <h3>{{ article.title }}</h3>
+                    <span class="meta">
+                        By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
+                    </span>
+                    <span class="visited" data-url="{{ article.url }}"></span>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
 {% block content %}

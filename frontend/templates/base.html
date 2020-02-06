@@ -5,18 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1580934604917">
+    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1581024861626">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
 </head>
 <body>
 <div class="container">
     <div class="sidebar">
         <a class="sidebar-logo" href="/"><span>Your logo here</span></a>
-        <div class="sidebar-list">
-            {% block sidebar %}
-                Templating error
-            {% endblock %}
-        </div>
+        {% block sidebar %}
+            Templating error
+        {% endblock %}
     </div>
     <div class="main">
         <div class="heading">{% block header_title %}<h1>{{ header_title }}</h1>{% endblock %}</div>
@@ -45,5 +43,5 @@
     <img src="{% static 'default.jpg' %}" alt="Background Image"/>
 </div>
 </body>
-<script src="{% static 'dist/main.js' %}?cb=1580934604917"></script>
+<script src="{% static 'dist/main.js' %}?cb=1581024861626"></script>
 </html>
