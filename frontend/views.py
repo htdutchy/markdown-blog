@@ -5,7 +5,7 @@ from blog_cache.models import CategoryCache, ArticleCache
 
 # Create your views here.
 def index_action(request):
-    categories = CategoryCache.objects.all()
+    categories = CategoryCache.objects.order_by('title').all()
     articles = ArticleCache.objects.filter(draft=False).order_by('published').all()[:5]
 
     context = {
@@ -19,8 +19,23 @@ def index_action(request):
 
 
 def category_action(request, category_slug):
-    return render(request, 'base.html')
+    category = CategoryCache.objects.get(slug__exact=category_slug)
+    if not category:
+        return render(request, '404.html')
+
+    articles = category.articlecache_set.filter(draft=False).order_by('published').all()
+
+    context = {
+        'category': category,
+        'articles': articles,
+    }
+    return render(request, 'category.html', context)
 
 
 def article_action(request, category_slug, page_slug):
-    return render(request, 'base.html')
+    article = ArticleCache.objects.get(category__slug=category_slug, page_slug= page_slug, draft=False)
+
+    context = {
+        'article': article,
+    }
+    return render(request, 'article.html', context)

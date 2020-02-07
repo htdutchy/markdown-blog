@@ -7,7 +7,7 @@
         <div class="article-list">
             {% for article in articles %}
                 <div class="article" onclick="location.href='{{ article.url }}';">
-                    <h3>{{ article.title }}</h3>
+                    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
                     <span class="meta">
                         By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
                     </span>
@@ -20,13 +20,11 @@
 {% block content %}
     <h2>Welcome</h2><br/>
     Some words here...
-    <p style="background-color: var(--sol-bd); color: var(--sol-pc)">Darkmode test primary content</p>
-    <p style="background-color: var(--sol-bh); color: var(--sol-sc)">Darkmode test secondary highlighted content</p>
     <hr/>
     <h2>Categories:</h2><br/>
     <div class="category-list">
         {% for category in categories %}
-            <div class="category-list-block">
+            <div class="category-list-block" onclick="location.href='{{ category.url }}';">
                 <img src="{% static category.featureImage.url_medium %}" alt="{{ category.featureImage.altText }}">
                 <h3>{{ category.title }}</h3>
                 <span class="visited" data-url="{{ category.url }}"></span>
