@@ -17,7 +17,8 @@ const exec = require('child_process').exec;
 // File paths
 const files = {
     sassPath: 'src/sass/**/*.sass',
-    jsPath: 'src/js/**/*.js'
+    jsPath: 'src/js/**/*.js',
+    htmlPath: 'frontend/templates/**/*.html'
 };
 
 // Sass task: compiles the style.sass file into style.css
@@ -58,12 +59,12 @@ function cacheBustTask() {
 // Watch task: watch sass and JS files for changes
 // If any change, run sass and js tasks simultaneously
 function watchTask() {
-    watch([files.sassPath, files.jsPath],
+    watch([files.sassPath, files.jsPath, files.htmlPath],
         series(
             parallel(
                 sassTask,
-                jsTask,
-                cacheBustTask
+                jsTask
+                // cacheBustTask
             ),
             browserSyncReload
         )

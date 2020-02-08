@@ -5,16 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}?cb=1581109985869">
+    <link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome/css/all.min.css' %}">
 </head>
 <body>
 <div class="container">
-    <div class="sidebar">
-        <a class="sidebar-logo" href="/"><span>Your logo here</span></a>
-        {% block sidebar %}
-            Templating error
-        {% endblock %}
+    <div class="logo">
+        <a class="logo-content" href="/"><span>Your logo here</span></a>
     </div>
     <div class="main">
         <div class="heading">{% block header_title %}<h1>{{ header_title }}</h1>{% endblock %}</div>
@@ -24,24 +21,29 @@
             {% endblock %}
         </div>
     </div>
-    <div class="sidebar-footer">
-        &copy; {% now "Y" %}
+    <div class="sidebar">
+        {% block sidebar %}
+            Templating error
+        {% endblock %}
     </div>
-    <div class="footer">
-        <p>
+    <div class="main-footer">
+        <span>
             <a href="https://gitlab.com/htdutchy/markdown-blog" target="_blank">Source Code</a>
-        </p>
-        <p class="darkmode-switch">
+        </span>
+    </div>
+    <div class="sidebar-footer">
+        <span>&copy; {% now "Y" %}</span>
+        <span class="darkmode-switch">
             <label id="darkmode-switch-label" class="darkmode-switch" for="darkmode-switch">
                 <input type="checkbox" id="darkmode-switch">
                 <span class="darkmode-slider"></span>
             </label>
-        </p>
+        </span>
     </div>
 </div>
 <div class="background">
     <img src="{% static 'default.jpg' %}" alt="Background Image"/>
 </div>
 </body>
-<script src="{% static 'dist/main.js' %}?cb=1581109985869"></script>
+<script src="{% static 'dist/main.js' %}"></script>
 </html>

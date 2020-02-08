@@ -5,39 +5,28 @@
     font-family: "Open Sans", sans-serif
     display: grid
     grid-template-columns: 350px auto
-    grid-template-rows: auto 50px
+    grid-template-rows: 50px auto 50px
     grid-column-gap: 15px
     grid-row-gap: 10px
-    justify-items: stretch
-    align-items: start
+    grid-template-areas: "logo main" "sidebar main" "sidebar-footer main-footer"
     min-height: 98vh
     max-width: 1920px
 
+.logo
+    grid-area: logo
+    text-align: center
+    background-color: var(--sol-background-trans)
+    border-radius: 10px
 
-.sidebar
-    display: grid
-    grid-template-columns: auto
-    grid-template-rows: 50px auto
-    grid-row-gap: 10px
-
-    .sidebar-logo
+    .logo-content
         font-family: "Open Sans", sans-serif
         font-weight: 600
         font-size: 30px
         line-height: 50px
-        text-align: center
-        background-color: var(--sol-background-trans)
-        border-radius: 10px
-        color: unset
         text-decoration: unset
 
-
-
 .main
-    display: grid
-    grid-template-columns: auto
-    grid-template-rows: 50px auto
-    grid-row-gap: 10px
+    grid-area: main
 
     .heading
         line-height: 50px
@@ -52,15 +41,11 @@
             font-family: "Open Sans", sans-serif
             font-weight: 600
 
+.sidebar
+    grid-area: sidebar
 
-.sidebar-footer
-    text-align: center
-    line-height: 50px
-    background-color: var(--sol-background-trans)
-    border-radius: 10px
-
-
-.footer
+.main-footer
+    grid-area: main-footer
     line-height: 50px
     background-color: var(--sol-highlight)
     border-radius: 10px
@@ -70,7 +55,12 @@
         display: inline-block
         margin: 0 0 0 0
 
-
+.sidebar-footer
+    grid-area: sidebar-footer
+    text-align: center
+    line-height: 50px
+    background-color: var(--sol-background-trans)
+    border-radius: 10px
 
 .background
     position: fixed

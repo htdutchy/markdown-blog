@@ -1,27 +1,14 @@
 @import variables
 @import mixins
 
-@media only screen and (max-device-width: 768px), (max-width: 768px)
-    .background
-        background-image: unset
-
+@media #{$alt-media}
     .container
         grid-template-columns: auto
-        grid-template-rows: auto auto 50px 50px
-        min-height: unset
+        grid-template-rows: 50px min-content min-content 50px 50px
+        grid-template-areas: "logo" "main" "sidebar" "main-footer" "sidebar-footer"
 
-    .sidebar
-        grid-template-columns: auto
-        grid-template-rows: 50px auto
+    .logo
+        background-color: var(--sol-highlight)
 
-    .sidebar-items
-        grid-template-columns: auto
-        grid-auto-rows: 100px
-
-    .main
-        grid-template-columns: auto
-        grid-template-rows: 50px auto
-
-    .category-list
-        grid-template-columns: repeat(2, auto)
-        grid-auto-rows: 400px
+    .background
+        display: none
