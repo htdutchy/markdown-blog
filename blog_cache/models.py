@@ -13,6 +13,7 @@ class ImageCache(models.Model):
     cachedLarge = models.FilePathField(path=settings.STATIC_FOLDER, recursive=True)
     fileHash = models.CharField(max_length=160)
     lastCached = models.DateTimeField()
+    isPortrait = models.BooleanField()
     exifData = models.TextField(blank=True, null=True)
 
     GENERIC_TYPE = 'generic'
@@ -34,6 +35,11 @@ class ImageCache(models.Model):
 
     def url_large(self):
         return path.join(settings.STATIC_IMAGE_CACHE_URL, path.basename(self.cachedLarge))
+
+    def portrait_class(self):
+        if self.isPortrait:
+            return 'portrait'
+        return ''
 
 
 # Category cache model

@@ -41,6 +41,12 @@ def magic_image(file, type, alt):
             file=file,
             fileType=type
         )
+
+    pil = Image.open(file)
+    image.isPortrait = False
+    if pil.height > pil.width:
+        image.isPortrait = True
+
     image.altText = alt
     image.lastCached = datetime.now(tz=timezone(settings.TIME_ZONE))
     file_hash = HashHelper.sha256_file(file)

@@ -4,14 +4,14 @@
 .main
     .category-list
         display: grid
-        grid-template-columns: repeat(auto-fill, 200px)
+        grid-template-columns: repeat(auto-fill, 240px)
         grid-auto-rows: 300px
         grid-column-gap: 10px
         grid-row-gap: 10px
         justify-items: stretch
         align-items: stretch
 
-        .category-list-block
+        .category-block
             position: relative
             display: flex
             border-radius: 10px
@@ -30,16 +30,24 @@
             .visited[data-visited]:after
                 content: "\f058"
 
-            h3
+            .category-block-head
                 position: absolute
                 background-color: var(--sol-highlight)
-                height: 50px
-                padding: 10px
+                min-height: 50px
+                padding: 5px 0 10px 5px
                 top: 0
                 left: 0
-                width: 200px
+                width: 235px
+                overflow: hidden
+
+                h3
+                    width: 215px
 
             img
                 width: auto
                 height: 100%
                 margin-top: 10px
+
+            img.portrait
+                width: 100%
+                height: auto
