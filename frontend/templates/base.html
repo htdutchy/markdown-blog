@@ -10,35 +10,45 @@
 </head>
 <body>
 <div class="container">
-    <div class="logo">
-        <a class="logo-content" href="/"><span>Your logo here</span></a>
+    <div class="logo-area">
+        <div class="logo">
+            <a class="logo-content" href="/"><span>Your logo here</span></a>
+        </div>
     </div>
-    <div class="main">
-        <div class="heading">{% block header_title %}<h1>{{ header_title }}</h1>{% endblock %}</div>
-        <div class="content">
-            {% block content %}
+    <div class="main-area">
+        <div class="main">
+            <div class="heading">{% block header_title %}<h1>{{ header_title }}</h1>{% endblock %}</div>
+            <div class="content">
+                {% block content %}
+                    Templating error
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-area">
+        <div class="sidebar">
+            {% block sidebar %}
                 Templating error
             {% endblock %}
         </div>
     </div>
-    <div class="sidebar">
-        {% block sidebar %}
-            Templating error
-        {% endblock %}
+    <div class="main-footer-area">
+        <div class="main-footer">
+            <span>
+                <a href="https://gitlab.com/htdutchy/markdown-blog" target="_blank">Source Code</a>
+            </span>
+        </div>
     </div>
-    <div class="main-footer">
-        <span>
-            <a href="https://gitlab.com/htdutchy/markdown-blog" target="_blank">Source Code</a>
-        </span>
-    </div>
-    <div class="sidebar-footer">
-        <span>&copy; {% now "Y" %}</span>
-        <span class="darkmode-switch">
-            <label id="darkmode-switch-label" class="darkmode-switch" for="darkmode-switch">
-                <input type="checkbox" id="darkmode-switch">
-                <span class="darkmode-slider"></span>
-            </label>
-        </span>
+    <div class="sidebar-footer-area">
+        <div class="sidebar-footer">
+            <span>&copy; {% now "Y" %}</span>
+            <span class="darkmode-switch">
+                <label id="darkmode-switch-label" class="darkmode-switch" for="darkmode-switch">
+                    <input type="checkbox" id="darkmode-switch">
+                    <span class="darkmode-slider"></span>
+                </label>
+            </span>
+        </div>
     </div>
 </div>
 <div class="background">

@@ -9,13 +9,13 @@ def index_action(request):
     articles = ArticleCache.objects.filter(draft=False).order_by('published').all()[:5]
 
     context = {
-        'meta_title': 'Home',
-        'header_title': 'Home',
+        'meta_title': 'Categories',
+        'header_title': 'Categories',
         'html': '',
         'categories': categories,
         'articles': articles,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'categories.html', context)
 
 
 def category_action(request, category_slug):

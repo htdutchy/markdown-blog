@@ -2,8 +2,9 @@
 @import ../mixins
 
 span.darkmode-switch
+    float: right
     padding-top: 8px
-    position: absolute
+    padding-right: 8px
 
 label.darkmode-switch
     position: relative
@@ -24,7 +25,7 @@ label.darkmode-switch
         background-color: $base02
         -webkit-transition: .4s
         transition: .4s
-        border-radius: 34px
+        border-radius: 10px
 
 
     .darkmode-slider:before
@@ -37,7 +38,7 @@ label.darkmode-switch
         background-color: $base2
         -webkit-transition: .4s
         transition: .4s
-        border-radius: 50%
+        border-radius: 10px
 
 
     input:checked + .darkmode-slider
@@ -63,6 +64,7 @@ label.darkmode-switch
         top: 50%
         left: 50%
         font-size: 16px
+        font-weight: 600
         font-family: "Open Sans", sans-serif
 
 

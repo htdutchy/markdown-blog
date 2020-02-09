@@ -1,6 +1,9 @@
 @import variables
 @import mixins
 
+body
+    margin: 8px
+
 .container
     font-family: "Open Sans", sans-serif
     display: grid
@@ -12,55 +15,62 @@
     min-height: 98vh
     max-width: 1920px
 
-.logo
+.logo-area
     grid-area: logo
-    text-align: center
-    background-color: var(--sol-background-trans)
-    border-radius: 10px
 
-    .logo-content
-        font-family: "Open Sans", sans-serif
-        font-weight: 600
-        font-size: 30px
-        line-height: 50px
-        text-decoration: unset
+    .logo
+        text-align: center
+        background-color: var(--sol-background-trans)
+        border-radius: 10px
 
-.main
-    grid-area: main
-
-    .heading
-        line-height: 50px
-        padding-left: 10px
-
-        h1
-            font-family: "Open Sans", sans-serif
-            font-size: 30px
-            margin: 0
-
-        .heading-home
+        .logo-content
             font-family: "Open Sans", sans-serif
             font-weight: 600
+            font-size: 30px
+            line-height: 50px
+            text-decoration: unset
 
-.sidebar
+.main-area
+    grid-area: main
+
+    .main
+
+        .heading
+            line-height: 50px
+            padding-left: 10px
+            margin-bottom: 10px
+            background-color: var(--sol-highlight)
+            border-radius: 10px
+
+            h1
+                font-family: "Open Sans", sans-serif
+                font-size: 30px
+                margin: 0
+
+            .heading-home
+                font-family: "Open Sans", sans-serif
+                font-weight: 600
+
+.sidebar-area
     grid-area: sidebar
 
-.main-footer
+.main-footer-area
     grid-area: main-footer
-    line-height: 50px
-    background-color: var(--sol-highlight)
-    border-radius: 10px
-    padding-left: 10px
 
-    p
-        display: inline-block
-        margin: 0 0 0 0
+    .main-footer
+        line-height: 50px
+        background-color: var(--sol-highlight)
+        border-radius: 10px
+        padding-left: 10px
 
-.sidebar-footer
+.sidebar-footer-area
     grid-area: sidebar-footer
-    text-align: center
-    line-height: 50px
-    background-color: var(--sol-background-trans)
-    border-radius: 10px
+
+    .sidebar-footer
+        text-align: center
+        line-height: 50px
+        background-color: var(--sol-background-trans)
+        border-radius: 10px
 
 .background
     position: fixed

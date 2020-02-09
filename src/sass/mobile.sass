@@ -2,13 +2,34 @@
 @import mixins
 
 @media #{$alt-media}
-    .container
-        grid-template-columns: auto
-        grid-template-rows: 50px min-content min-content 50px 50px
-        grid-template-areas: "logo" "main" "sidebar" "main-footer" "sidebar-footer"
+    body
+        margin: 0
 
-    .logo
-        background-color: var(--sol-highlight)
+    .container
+        display: block
+
+    .logo-area
+        padding: 8px 8px 4px 8px
+        background-color: var(--sol-background)
+
+        .logo
+            background-color: var(--sol-highlight)
+
+    .main-area
+        background-color: var(--sol-background)
+        padding: 4px 8px 8px 8px
+
+    .sidebar-area
+        padding: 8px 8px 4px 8px
+
+    .main-footer-area
+        padding: 4px 8px 4px 8px
+
+        .main-footer
+            background-color: var(--sol-background-trans)
+
+    .sidebar-footer-area
+        padding: 4px 8px 8px 8px
 
     .background
-        display: none
+        width: 100%
