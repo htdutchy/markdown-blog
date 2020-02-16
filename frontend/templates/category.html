@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block header_title %}
+    <h2>Articles</h2>
+{% endblock %}
+{% block content %}
+    <div class="category-list">
+        {% for category in categories %}
+            <div class="category-block" onclick="location.href='{{ category.url }}';">
+                <div class="category-block-head">
+                    <h3><a href="{{ category.url }}">{{ category.title }}</a></h3>
+                </div>
+                <img src="{% static category.featureImage.url_medium %}" alt="{{ category.featureImage.altText }}" class="{{ category.featureImage.portrait_class }}">
+                <span class="visited" data-url="{{ category.url }}"></span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block sidebar %}
+    <div class="sidebar-category-block">
+        <h1>{{ category.title }}</h1>
+        <div class="category">
+            {{ category.description }}
+        </div>
+    </div>
+{% endblock %}

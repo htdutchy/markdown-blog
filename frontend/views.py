@@ -9,6 +9,7 @@ def index_action(request):
     articles = ArticleCache.objects.filter(draft=False).order_by('published').all()[:5]
 
     context = {
+        'background_img': 'default.jpg',
         'meta_title': 'Categories',
         'header_title': 'Categories',
         'html': '',
@@ -26,6 +27,10 @@ def category_action(request, category_slug):
     articles = category.articlecache_set.filter(draft=False).order_by('published').all()
 
     context = {
+        'background_img': category.featureImage.url_large,
+        'meta_title': 'Category: ' + category.title,
+        'header_title': 'Category: ' + category.title,
+        'html': '',
         'category': category,
         'articles': articles,
     }
@@ -36,6 +41,10 @@ def article_action(request, category_slug, page_slug):
     article = ArticleCache.objects.get(category__slug=category_slug, page_slug= page_slug, draft=False)
 
     context = {
+        'background_img': 'default.jpg',
+        'meta_title': 'Categories',
+        'header_title': 'Categories',
+        'html': '',
         'article': article,
     }
     return render(request, 'article.html', context)

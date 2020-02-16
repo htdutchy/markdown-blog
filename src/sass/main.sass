@@ -12,7 +12,7 @@ body
     grid-column-gap: 15px
     grid-row-gap: 10px
     grid-template-areas: "logo main" "sidebar main" "sidebar-footer main-footer"
-    min-height: 98vh
+    min-height: calc(100vh - 20px)
     max-width: 1920px
 
 .logo-area
@@ -86,3 +86,7 @@ body
     img
         width: auto
         height: 100%
+
+    img.portrait
+        width: 100%
+        height: auto
