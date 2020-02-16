@@ -3,14 +3,26 @@ from django.db import models
 from os import path
 
 
+# Hack for creating dynamic migrations
+class StringSettingsReference(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return getattr(settings, self.name)
+
+    def deconstruct(self):
+        return "%s.%s" % (__name__, self.__class__.__name__), (self.name,), {}
+
+
 # Image cache model
 class ImageCache(models.Model):
-    file = models.FilePathField(path=settings.UPLOAD_FOLDER, recursive=True, unique=True)
+    file = models.FilePathField(path=StringSettingsReference('UPLOAD_FOLDER'), recursive=True, unique=True)
     fileType = models.CharField(max_length=24)
     altText = models.CharField(max_length=120, blank=True, null=True)
-    cachedSmall = models.FilePathField(path=settings.STATIC_FOLDER, recursive=True)
-    cachedMedium = models.FilePathField(path=settings.STATIC_FOLDER, recursive=True)
-    cachedLarge = models.FilePathField(path=settings.STATIC_FOLDER, recursive=True)
+    cachedSmall = models.FilePathField(path=StringSettingsReference('STATIC_FOLDER'), recursive=True)
+    cachedMedium = models.FilePathField(path=StringSettingsReference('STATIC_FOLDER'), recursive=True)
+    cachedLarge = models.FilePathField(path=StringSettingsReference('STATIC_FOLDER'), recursive=True)
     fileHash = models.CharField(max_length=160)
     lastCached = models.DateTimeField()
     isPortrait = models.BooleanField()
@@ -44,8 +56,8 @@ class ImageCache(models.Model):
 
 # Category cache model
 class CategoryCache(models.Model):
-    folder = models.FilePathField(path=settings.UPLOAD_FOLDER, allow_files=False, allow_folders=True, unique=True)
-    file = models.FilePathField(path=settings.UPLOAD_FOLDER, recursive=True)
+    folder = models.FilePathField(path=StringSettingsReference('UPLOAD_FOLDER'), allow_files=False, allow_folders=True, unique=True)
+    file = models.FilePathField(path=StringSettingsReference('UPLOAD_FOLDER'), recursive=True)
     slug = models.SlugField(max_length=120, unique=True)
     title = models.CharField(max_length=120)
     description = models.TextField(blank=True, null=True)
@@ -76,7 +88,7 @@ class TagCache(models.Model):
 
 # Article cache model
 class ArticleCache(models.Model):
-    file = models.FilePathField(path=settings.UPLOAD_FOLDER, recursive=True, unique=True)
+    file = models.FilePathField(path=StringSettingsReference('UPLOAD_FOLDER'), recursive=True, unique=True)
     fileHash = models.CharField(max_length=160)
     slug = models.SlugField(max_length=240)
     title = models.CharField(max_length=240)
