@@ -2,7 +2,7 @@ import logging
 from ..helpers import HashHelper
 from ..models import ImageCache
 from markdown_blog import settings
-from os import path, mkdir, remove
+from os import path, makedirs, remove
 from PIL import Image
 from pytz import timezone
 from datetime import datetime
@@ -15,7 +15,7 @@ def generate_image(file, size):
     logger.info('Generating image: ' + file + ' at size:' + str(size))
     try:
         if not path.isdir(settings.STATIC_IMAGE_CACHE_FOLDER):
-            mkdir(settings.STATIC_IMAGE_CACHE_FOLDER)
+            makedirs(settings.STATIC_IMAGE_CACHE_FOLDER)
         im = Image.open(file)
         new_file = path.join(settings.STATIC_IMAGE_CACHE_FOLDER, str(uuid.uuid4()) + '.jpeg')
         im.thumbnail(size, Image.ANTIALIAS)
