@@ -2,16 +2,18 @@
 <html lang="en" data-theme="light">
 {% include "components/head.html" %}
 <body>
-<div class="container">
-    {% include "components/logo-area.html" %}
-    <div class="sidebar-area">
+<div class="container alt">
+    <div class="logo-area alt">
+        {% include "components/logo.html" %}
+    </div>
+    <div class="sidebar-area alt">
         <div class="sidebar">
             {% block sidebar %}
                 <pre>Templating error: sidebar block missing</pre>
             {% endblock %}
         </div>
     </div>
-    <div class="main-area">
+    <div class="main-area alt">
         <div class="main">
             <div class="heading">
                 {% block content_header %}
@@ -25,7 +27,12 @@
             </div>
         </div>
     </div>
-    {% include "components/footers.html" %}
+    <div class="main-footer-area alt">
+        {% include "components/footer-main.html" %}
+    </div>
+    <div class="sidebar-footer-area alt">
+        {% include "components/footer-sidebar.html" %}
+    </div>
 </div>
 {% include "components/background.html" with background_img=background_img %}
 </body>

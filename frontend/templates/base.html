@@ -3,7 +3,9 @@
 {% include "components/head.html" %}
 <body>
 <div class="container">
-    {% include "components/logo-area.html" %}
+    <div class="logo-area">
+        {% include "components/logo.html" %}
+    </div>
     <div class="main-area">
         <div class="main">
             <div class="heading">
@@ -25,7 +27,12 @@
             {% endblock %}
         </div>
     </div>
-    {% include "components/footers.html" %}
+    <div class="main-footer-area">
+        {% include "components/footer-main.html" %}
+    </div>
+    <div class="sidebar-footer-area">
+        {% include "components/footer-sidebar.html" %}
+    </div>
 </div>
 {% include "components/background.html" with background_img=background_img %}
 </body>
