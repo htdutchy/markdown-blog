@@ -4,6 +4,13 @@
 <body>
 <div class="container">
     {% include "components/logo-area.html" %}
+    <div class="sidebar-area">
+        <div class="sidebar">
+            {% block sidebar %}
+                <pre>Templating error: sidebar block missing</pre>
+            {% endblock %}
+        </div>
+    </div>
     <div class="main-area">
         <div class="main">
             <div class="heading">
@@ -16,13 +23,6 @@
                     <pre>Templating error: content block missing</pre>
                 {% endblock %}
             </div>
-        </div>
-    </div>
-    <div class="sidebar-area">
-        <div class="sidebar">
-            {% block sidebar %}
-                <pre>Templating error: sidebar block missing</pre>
-            {% endblock %}
         </div>
     </div>
     {% include "components/footers.html" %}

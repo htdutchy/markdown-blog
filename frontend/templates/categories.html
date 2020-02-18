@@ -19,6 +19,9 @@
         </div>
     </div>
 {% endblock %}
+{% block content_header %}
+    <h1>{{ header_title }}</h1>
+{% endblock %}
 {% block content %}
     <div class="category-list">
         {% for category in categories %}
