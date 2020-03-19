@@ -37,14 +37,17 @@ def category_action(request, category_slug):
     return render(request, 'category.html', context)
 
 
-def article_action(request, category_slug, page_slug):
-    article = ArticleCache.objects.get(category__slug=category_slug, page_slug= page_slug, draft=False)
+def article_action(request, category_slug, article_slug):
+    article = ArticleCache.objects.get(category__slug=category_slug, slug=article_slug, draft=False)
+
+    articles = article.category.articlecache_set.filter(draft=False).order_by('published').all()[:5]
 
     context = {
-        'background_img': 'default.jpg',
-        'meta_title': 'Categories',
-        'header_title': 'Categories',
-        'html': '',
+        'background_img': article.featureImage.url_large,
+        'meta_title': article.title,
+        'header_title': article.cachedHeading,
+        'html': article.cachedContent,
         'article': article,
+        'articles': articles,
     }
     return render(request, 'article.html', context)

@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block sidebar %}
+    <div class="sidebar-articles-block">
+        <h2>Recent articles:</h2>
+        <div class="article-list">
+            {% for article in articles %}
+                <div class="article" onclick="location.href='{{ article.url }}';">
+                    <div class="article-head">
+                        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                    </div>
+                    <span class="meta">
+                        By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
+                    </span>
+                    <span class="visited" data-url="{{ article.url }}"></span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block content_header %}
+    <h1>{{ header_title }}</h1>
+{% endblock %}
+{% block content %}
+    <div class="article">
+        {{ html|safe }}
+    </div>
+{% endblock %}

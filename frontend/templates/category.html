@@ -6,13 +6,15 @@
 {% endblock %}
 {% block content %}
     <div class="category-list">
-        {% for category in categories %}
-            <div class="category-block" onclick="location.href='{{ category.url }}';">
-                <div class="category-block-head">
-                    <h3><a href="{{ category.url }}">{{ category.title }}</a></h3>
+        {% for article in articles %}
+            <div class="article" onclick="location.href='{{ article.url }}';">
+                <div class="article-head">
+                    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
                 </div>
-                <img src="{% static category.featureImage.url_medium %}" alt="{{ category.featureImage.altText }}" class="{{ category.featureImage.portrait_class }}">
-                <span class="visited" data-url="{{ category.url }}"></span>
+                <span class="meta">
+                        By {{ article.author }} | On {{ article.published }} | In <a href="{{ article.category.url }}">{{ article.category.title }}</a>
+                    </span>
+                <span class="visited" data-url="{{ article.url }}"></span>
             </div>
         {% endfor %}
     </div>
