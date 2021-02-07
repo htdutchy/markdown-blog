@@ -2,23 +2,40 @@
 
 ## A blogging engine written in Django, no wysiwyg, just upload .md files!
 
-While there are applications that convert your markdown files into a website, they don't do a very good job.  
-This is the solution.
+While there are applications that convert your markdown files into a website, they don't do a very good job of making a modern website.  
+This project aims to generate modern, advanced websites from basic folder structures and markdown files.
+Besides taking a basic folder structure with markdown files there is support for meta data to add SEO and select featured images.  
 
-This system will do a lot of fancy work like caching, image optimization  
-and every possible thing I can think of to bring a markdown based blog up to modern standards and maybe to the cutting edge of technology.  
-(I will be ignoring IE11 during development of my blog, if you want backwards compatability, it's up to you)
+More advanced features will include:
+- MermaidJS support
+- CodeHilite
+- Image EXIF data parsing
+- Image galleries
 
-## Documentation will follow, this project is still in development
+If you want to use this system for yourself you can either use the included frontend app or override it with your own.
+I'm working on an official way to smoothly integrate custom frontends that won't be broken by a code base update.
 
-If you want to use this system for yourself, feel free to fork this project!
+### Installation
+```bash
+# Create virtual environment
+python3 -m venv venv
+# Open virtual environment
+source venv/bin/activate
+# Install python requirements
+pip install -r requirements.txt
+# Copy .env file and edit to desired settings
+cp .env.example .env
+nano .env
+# Initiate the database
+./manage.py migrate
+```
 
-## Usage:
-### Category creation:
+### Usage:
+#### Category creation:
 Create a folder in your upload directory.  
 To keep things simple I advise using the slug as folder name (`upload/example_category`).
 
-Create the metadata file (`upload/example_categoy/_meta.md`.
+Create the metadata file (`upload/example_categoy/_meta.md`).
 
     slug: example_category
     title: Example category
@@ -27,7 +44,7 @@ Create the metadata file (`upload/example_categoy/_meta.md`.
 
 Upload the feature_image (`upload/example_category/_category.jpg`)
 
-### Blog post creation:
+#### Blog post creation:
 
 Upload the markdown file:
 
@@ -65,6 +82,21 @@ Upload the markdown file:
     - [x] checked
 
 Upload the feature_image (`upload/example_category/some_image.jpg`)
+
+### Development
+```bash
+# Install npm requirements (only required for development)
+npm install
+# Run the django dev server
+./manage.py runserver
+# Run gulp watcher & browserSync
+gulp browserSync
+```
+
+### Deployment
+#### Standard (cron + systemd)
+
+#### Docker
 
 ### Credits
 

@@ -1,4 +1,11 @@
+### Project Specific ###
+web/static
+node_modules
+.docker-sync
+upload
+blog_cache/static
 
+# Generic stuff below...
 # Created by https://www.gitignore.io/api/osx,venv,django,python
 # Edit at https://www.gitignore.io/?templates=osx,venv,django,python
 
@@ -27,7 +34,7 @@ media
 .Python
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/
@@ -235,9 +242,3 @@ pip-selfcheck.json
 ### IntelliJ ###
 # Everything
 .idea
-
-web/static
-node_modules
-.docker-sync
-upload
-blog_cache/static
