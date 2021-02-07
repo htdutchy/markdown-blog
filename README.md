@@ -2,6 +2,8 @@
 
 ## A blogging engine written in Django, no wysiwyg, just upload .md files!
 
+**This is a work in progress, readme isn't complete yet but poc is almost finished**
+
 While there are applications that convert your markdown files into a website, they don't do a very good job of making a modern website.  
 This project aims to generate modern, advanced websites from basic folder structures and markdown files.
 Besides taking a basic folder structure with markdown files there is support for meta data to add SEO and select featured images.  
